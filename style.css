@@ -50,10 +50,15 @@ button{cursor:pointer} button:disabled{cursor:wait;opacity:.62}
   font-size:clamp(22px,5vw,31px); font-weight:500; letter-spacing:-.04em;
 }
 .prompt.start-prompt{
-  font-family:'Gmarket Sans', sans-serif;
-  font-weight:500;
+  font-family:'Sweet', sans-serif;
+  font-weight:100;
+  font-size: xx-large;
   letter-spacing:-.035em;
+  color: #0c2549;
+  
 }
+
+
 .desc{margin:0 auto 16px;background:transparent;padding:9px 2px;font-size:13px}
 .hint{font-size:12px;color:#b1a18f;margin-bottom:16px}
 .pick{
@@ -88,8 +93,24 @@ button{cursor:pointer} button:disabled{cursor:wait;opacity:.62}
 .cover .cover-title{font-size:clamp(24px,5vw,34px);font-weight:700;letter-spacing:-.05em;line-height:1.05}
 .cover .cover-artist{font-size:12px;opacity:.82;margin-top:5px}
 .lyric{
-  margin:0 0 18px;padding:17px 18px;border-left:3px solid var(--navy);
-  background:transparent;font-size:15px;line-height:1.7;letter-spacing:-.02em
+  width:100%;
+  margin:20px auto 24px;
+  padding:0 18px;
+  box-sizing:border-box;
+  text-align:center;
+  line-height:1.7;
+  letter-spacing:-.02em;
+  font-size:15px;
+  color:#14151a;
+}
+.lyric span{
+  position:relative;
+  display:inline-block;
+  max-width:min(86%,620px);
+  padding:9px 18px;
+  box-sizing:border-box;
+  background:#cfd8dffa ;
+  border-radius:13px;
 }
 .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
 .action{
@@ -302,9 +323,13 @@ button{cursor:pointer} button:disabled{cursor:wait;opacity:.62}
   line-height:1.4;
 }
 .top10-item.featured{
-  background:#fff3b8;
+  background:#fff3b886;
   border-color:#eadb86;
   box-shadow:0 3px 10px rgba(120,95,30,.08);
+  margin-left:-28px;
+  margin-right:-28px;
+  padding-left:28px;
+  padding-right:28px;
 }
 .top10-item.featured .top10-num,
 .top10-item.featured .top10-song,
@@ -339,6 +364,12 @@ button{cursor:pointer} button:disabled{cursor:wait;opacity:.62}
 }
 @media(max-width:560px){
   .top10-paper{padding:31px 18px 26px;margin-top:28px}
+  .top10-item.featured{
+    margin-left:-18px;
+    margin-right:-18px;
+    padding-left:18px;
+    padding-right:18px;
+  }
   .paper-tape{left:26px}
   .receipt-columns,.receipt-feature .receipt-row,.top10-item{grid-template-columns:38px 1fr 28px;gap:6px}
   .receipt-song{font-size:14px}
@@ -365,6 +396,40 @@ button{cursor:pointer} button:disabled{cursor:wait;opacity:.62}
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+    font-family: 'SlowGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/neurimboGothicRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeekbleMalrangiche';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/GeekbleMalang2WOFF2.woff2') format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sweet';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Heavy.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+    
+}
+@font-face {
+    font-family: 'ImHyeMin';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Regular.woff2') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ImHyeMin';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
 :root{
   --font-ko:'GeuriunXGukhanbakSingoyangI', sans-serif;
   --font-en:Arial, Helvetica, sans-serif;
@@ -373,6 +438,10 @@ button{cursor:pointer} button:disabled{cursor:wait;opacity:.62}
 body{
   font-family:var(--font-ko), sans-serif;
   font-weight:400;
+}
+
+.start-prompt {
+  font-family: 'ImHyeMin', sans-serif;
 }
 
 /* English / Latin text */
@@ -390,7 +459,7 @@ button,
 .progress,
 .footer-mark,
 .latin{
-  font-family:var(--font-en), sans-serif;
+  font-family:var(--font-en), 'SlowGothic', sans-serif;
 }
 
 /* Korean-first mixed text. Latin runs are explicitly wrapped by mixedFontText(). */
@@ -420,3 +489,4 @@ button,
 .cover-artist .latin{
   font-family:var(--font-en), sans-serif;
 }
+

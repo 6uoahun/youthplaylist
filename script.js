@@ -500,7 +500,7 @@ const songs = [
     "id": 72,
     "artist": "투어스(TWS)",
     "title": "너의 이름(Highlight)",
-    "lyric": "너는 말야 내 청춘의 Highligh",
+    "lyric": "너는 말야 내 청춘의 Highlight",
     "youtubeUrl": "https://youtu.be/mmVHP8y1Gvc?si=eh153UE3C5FW429p"
   },
   {
