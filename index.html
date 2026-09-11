@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#304d76">
+<link rel="stylesheet" href="style.css">
+<title>빛나는 청춘을 위한 PLAYLIST</title>
+
+</head>
+<body>
+<main class="app">
+  <header class="hero">
+    <div class="eyebrow">YOUTH DAY PLAYLIST</div>
+    <h1>빛나는 청춘을 위한 <span class="latin">PLAYLIST</span></h1>
+    <p class="hero-sub">지금, 출발합니다</p>
+  </header>
+
+  <section class="card">
+    <div id="startView" class="center">
+      <div class="music-orb">♪</div>
+      <div class="section-label">TODAY'S SONG</div>
+      <div class="prompt start-prompt">YOUTH, ON REPEAT</div>
+      <p class="desc">지금의 나를 위한 청춘의 노래를 뽑아보세요.</p>
+      <div class="hint">어떤 노래가 나올까요?</div>
+      <button id="pickBtn" class="pick">PICK</button>
+    </div>
+
+    <div id="resultView" class="result">
+      <div id="resultTitle" class="prompt center"></div>
+      <div id="resultArtist" class="desc center"></div>
+      <div id="resultLyric" class="lyric"></div>
+      <div id="embed" class="embed"></div>
+      <div class="actions">
+        <button id="againBtn" class="action">↻ 다른 노래 뽑기</button>
+      </div>
+      <p id="note" class="note">한 번 뽑은 노래는 이번 라운드에서 다시 나오지 않아요.</p>
+      <div class="progress"><i id="progressBar"></i></div>
+
+
+    </div>
+  </section>
+
+  <section id="top10Section" class="top10-paper">
+    <div class="paper-tape"></div>
+    <div class="top10-header">
+      <div class="paper-kicker">YOUTH DAY PLAYLIST</div>
+      <h2>오늘의 청춘 플레이리스트 <span>TOP 10</span></h2>
+      <div class="paper-subtitle">오늘의 랜덤 추천곡</div>
+    </div>
+
+    <div class="receipt-meta">
+      <span>YOUTH DAY</span>
+      <span>SAT, SEP 19, 2026</span>
+    </div>
+
+    <div class="receipt-divider"></div>
+    <div class="receipt-columns">
+      <span>QTY</span><span>ITEM</span><span class="amt">AMT</span>
+    </div>
+    <div class="receipt-divider"></div>
+
+    <div id="receiptFeature" class="receipt-feature"></div>
+
+    <div class="receipt-divider"></div>
+    <div class="receipt-top-label">- TOP 10 -</div>
+    <div id="top10List" class="top10-list"></div>
+
+    <div class="receipt-divider"></div>
+    <div class="receipt-summary">
+      <div class="summary-row"><span>ITEM COUNT:</span><span id="itemCount">10</span></div>
+      <div class="summary-row receipt-total"><span>TOTAL:</span><span>∞</span></div>
+    </div>
+
+    <div class="receipt-divider"></div>
+    <div class="receipt-code">
+      <div>CARD #: &nbsp;**** **** **** 2026</div>
+      <div>AUTH CODE: 260919</div>
+      <div>CARDHOLDER: TDAT</div>
+    </div>
+    <div class="paper-footer">MY YOUTH · RANDOM MUSIC</div>
+  </section>
+
+  <div id="status" class="status">총 82곡이 준비되어 있어요</div>
+  <div id="footerMark" class="footer-mark">MY YOUTH · RANDOM MUSIC</div>
+</main>
+
+
+<script src="script.js" defer></script>
+</body>
+</html>
