@@ -484,7 +484,7 @@ const songs = [
   },
   {
     "id": 70,
-    "artist": "투모로우바이투게더",
+    "artist": "투어스(TWS)",
     "title": "hey! hey!",
     "lyric": "아무도 모르는 내일로 어느새 속도를 내 뛰고 있어",
     "youtubeUrl": "https://youtu.be/I4Trrq2iX4I?si=LH-c59PefnozuXRH"
