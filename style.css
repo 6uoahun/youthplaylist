@@ -113,10 +113,6 @@ button{cursor:pointer} button:disabled{cursor:wait;opacity:.62}
 .embed-placeholder strong{font-size:13px;margin-bottom:8px}
 .embed-placeholder span{font-size:11px;opacity:.7}
 .new-pick{margin-top:20px}
-.progress{
-  height:4px;background:#e9e0d4;border-radius:99px;overflow:hidden;margin:20px 0 0
-}
-.progress i{display:block;height:100%;background:var(--navy);width:0;transition:.4s}
 .footer-mark{margin-top:22px;font-size:9px}
 @media(max-width:520px){
  .app{width:min(100% - 18px,720px);padding-top:24px}
@@ -133,10 +129,10 @@ button{cursor:pointer} button:disabled{cursor:wait;opacity:.62}
   padding:34px 28px 30px;
   color:#1d1d1d;
   background:
-    radial-gradient(circle at 15% 12%,rgba(255,255,255,.7),transparent 24%),
-    radial-gradient(circle at 88% 82%,rgba(80,80,80,.07),transparent 28%),
-    repeating-linear-gradient(0deg,rgba(70,70,70,.025) 0,rgba(70,70,70,.025) 1px,transparent 1px,transparent 4px),
-    #f2eee7;
+    radial-gradient(circle at 15% 12%,rgba(255,255,255,.92),transparent 24%),
+    radial-gradient(circle at 88% 82%,rgba(80,80,80,.035),transparent 28%),
+    repeating-linear-gradient(0deg,rgba(70,70,70,.012) 0,rgba(70,70,70,.012) 1px,transparent 1px,transparent 4px),
+    #fffefa;
   border:1px solid rgba(70,70,70,.13);
   box-shadow:0 12px 25px rgba(50,45,40,.13);
   /* slightly irregular thermal-paper edge */
@@ -306,13 +302,17 @@ button{cursor:pointer} button:disabled{cursor:wait;opacity:.62}
   line-height:1.4;
 }
 .top10-item.featured{
-  background:transparent;
-  margin:0;
-  padding-left:0;
-  padding-right:0;
-  border-radius:0;
+  background:#fff3b8;
+  border-color:#eadb86;
+  box-shadow:0 3px 10px rgba(120,95,30,.08);
 }
-.top10-item.featured .top10-num{color:#b45f3e}
+.top10-item.featured .top10-num,
+.top10-item.featured .top10-song,
+.top10-item.featured .top10-artist,
+.top10-item.featured .top10-lyric{
+  font-weight:800;
+  color:#202020;
+}
 .receipt-summary{
   font-family:'Courier New',monospace;
   font-size:12px;

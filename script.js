@@ -616,35 +616,18 @@ function shuffleArray(arr){
 
 // 첫 화면에서도 영수증형 TOP 10 플레이리스트를 보여줍니다.
 function buildTop10(selected){
-  const pool = selected
-    ? [selected, ...shuffleArray(songs.filter(s=>s.id!==selected.id))].slice(0,10)
-    : shuffleArray(songs).slice(0,10);
-  const ten = selected ? [selected, ...shuffleArray(songs.filter(s=>s.id!==selected.id)).slice(0,9)] : pool;
+  let listSongs;
 
   if(selected){
-    $('receiptFeature').innerHTML = `
-      <div class="receipt-row">
-        <div class="receipt-num">01</div>
-        <div>
-          <div class="receipt-song">${mixedFontText(selected.title)}</div>
-          <div class="receipt-artist">${mixedFontText(selected.artist)}</div>
-          <div class="receipt-lyric">“${mixedFontText(selected.lyric)}”</div>
-        </div>
-        <div class="receipt-amt">∞</div>
-      </div>`;
+    // 선택된 곡은 10곡 안에 한 번만 포함하고, 첫 번째에는 배치하지 않습니다.
+    const others = shuffleArray(songs.filter(s => s.id !== selected.id)).slice(0, 9);
+    const insertIndex = 1 + Math.floor(Math.random() * 9); // 2~10번째 위치
+    listSongs = [...others];
+    listSongs.splice(insertIndex, 0, selected);
   }else{
-    $('receiptFeature').innerHTML = `
-      <div class="receipt-row">
-        <div class="receipt-num">01</div>
-        <div>
-          <div class="receipt-song">오늘의 노래를 뽑아보세요</div>
-          <div class="receipt-artist">PICK 버튼을 누르면 추천곡이 표시됩니다.</div>
-        </div>
-        <div class="receipt-amt">∞</div>
-      </div>`;
+    listSongs = shuffleArray(songs).slice(0, 10);
   }
 
-  const listSongs = selected ? ten : pool;
   $('top10List').innerHTML = listSongs.map((s,idx)=>`
     <div class="top10-item${selected && s.id===selected.id ? ' featured':''}">
       <div class="top10-num">${String(idx+1).padStart(2,'0')}</div>
@@ -673,7 +656,6 @@ function showResult(song){
   }
 
   const used=songs.length-state.remaining.length;
-  $('progressBar').style.width=(used/songs.length*100)+'%';
   $('status').textContent=`${state.remaining.length}곡이 남아 있어요`;
   $('footerMark').textContent=`${used} / ${songs.length} SONGS PICKED`;
   buildTop10(song);
@@ -687,10 +669,8 @@ function resetRound(){
   $('startView').style.display='block';
   $('status').textContent='총 82곡이 준비되어 있어요';
   $('footerMark').textContent='MY YOUTH · RANDOM MUSIC';
-  $('progressBar').style.width='0';
   $('top10Section').style.display='none';
   $('top10List').innerHTML='';
-  $('receiptFeature').innerHTML='';
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
